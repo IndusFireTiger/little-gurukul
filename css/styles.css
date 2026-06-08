@@ -199,7 +199,6 @@ body {
 }
 .color-canvas svg { width: min(360px, 82vw); height: auto; display: block; }
 .color-canvas .region { fill: #ffffff; stroke: #2a2118; stroke-width: 2.5; cursor: pointer; transition: fill .08s; }
-.color-canvas .region:hover { stroke: #c8881f; }
 .color-canvas text.region { stroke: none; }
 .color-hint { color: var(--muted); font-size: .85rem; }
 

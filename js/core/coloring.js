@@ -40,9 +40,19 @@ Gurukul.coloring = {
 
     function renderCanvas() { canvas.innerHTML = current.svg; }
 
+    // Hover previews the chosen colour; click commits it.
+    // (Inline style.fill is used because it overrides the CSS default fill.)
+    canvas.addEventListener("pointerover", e => {
+      const r = e.target.closest(".region");
+      if (r) { r.dataset.fill = r.style.fill || ""; r.style.fill = color; }
+    });
+    canvas.addEventListener("pointerout", e => {
+      const r = e.target.closest(".region");
+      if (r) r.style.fill = r.dataset.fill || "";
+    });
     canvas.addEventListener("click", e => {
       const r = e.target.closest(".region");
-      if (r) r.setAttribute("fill", color);
+      if (r) { r.style.fill = color; r.dataset.fill = color; }
     });
 
     objsEl.querySelectorAll("button").forEach(b => b.onclick = () => {

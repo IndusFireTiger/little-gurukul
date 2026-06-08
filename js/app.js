@@ -1,16 +1,16 @@
-/* Vidya Play — router + home menu. Loaded last (after all games register). */
+/* LittleGurukul — router + home menu. Loaded last (after all games register). */
 (function () {
   const backBtn = document.getElementById("backBtn");
 
   function renderHome() {
-    const cards = Vidya.registry.map(g => `
+    const cards = Gurukul.registry.map(g => `
       <button data-go="${g.id}">
         <div class="ico">${g.icon}</div>
         <h3>${g.title}</h3>
         <p>${g.blurb}</p>
       </button>`).join("");
 
-    Vidya.util.setScreen(`
+    Gurukul.util.setScreen(`
       <div class="hero">
         <div class="om-big">&#x950;</div>
         <h2>Learn Hindu Mythology, Playfully</h2>
@@ -29,14 +29,14 @@
       renderHome();
       return;
     }
-    const game = Vidya.registry.find(g => g.id === id);
+    const game = Gurukul.registry.find(g => g.id === id);
     if (!game) { renderHome(); return; }
     backBtn.classList.add("show");
-    const root = Vidya.util.setScreen("");
+    const root = Gurukul.util.setScreen("");
     game.mount(root);
   }
 
   backBtn.onclick = () => go("home");
-  Vidya.go = go; // exposed for convenience
+  Gurukul.go = go; // exposed for convenience
   renderHome();
 })();

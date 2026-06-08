@@ -1,4 +1,4 @@
-# Vidya Play — MVP
+# LittleGurukul — MVP
 
 A simple, self-contained web app for learning Hindu mythology through play.
 **No build step, no dependencies — just open `index.html` in any browser.**
@@ -50,10 +50,10 @@ app/
 │   └── styles.css           # all shared styles
 └── js/
     ├── core/
-    │   ├── util.js          # Vidya namespace, registry, shuffle, best-score storage
+    │   ├── util.js          # Gurukul namespace, registry, shuffle, best-score storage
     │   ├── data.js          # all content: deityVahana, weapons, symbols, inline SVG
-    │   ├── memory.js        # reusable memory/match engine (Vidya.memory.mountGame)
-    │   └── flashcards.js    # reusable flash-card engine (Vidya.flashcards.mountGame)
+    │   ├── memory.js        # reusable memory/match engine (Gurukul.memory.mountGame)
+    │   └── flashcards.js    # reusable flash-card engine (Gurukul.flashcards.mountGame)
     ├── games/
     │   ├── deityVahanaFlash.js
     │   ├── vahanaMatch.js
@@ -65,15 +65,15 @@ app/
 ### How it fits together
 - Scripts are plain (non-module) `<script>` tags so the app works directly over `file://`
   (ES modules are blocked by browsers over `file://`).
-- Each game file calls `Vidya.util.register({ id, icon, title, blurb, mount(root) })`.
+- Each game file calls `Gurukul.util.register({ id, icon, title, blurb, mount(root) })`.
   The router (`app.js`) builds the home menu from this registry **in script-load order**
   and calls a game's `mount(root)` when selected.
 - The two engines (`memory.js`, `flashcards.js`) hold all shared game logic; game files
   are tiny config wrappers.
 
 ## Add a new game
-1. Create `js/games/myGame.js` that calls `Vidya.util.register({...})` and, inside
-   `mount(root)`, uses `Vidya.memory.mountGame` / `Vidya.flashcards.mountGame` (or custom DOM).
+1. Create `js/games/myGame.js` that calls `Gurukul.util.register({...})` and, inside
+   `mount(root)`, uses `Gurukul.memory.mountGame` / `Gurukul.flashcards.mountGame` (or custom DOM).
 2. Add any content to `js/core/data.js`.
 3. Add one `<script src="js/games/myGame.js"></script>` line in `index.html`
    **before** `js/app.js`. It appears on the home menu automatically.

@@ -1,8 +1,8 @@
-/* Vidya Play — reusable flash-card engine.
-   A game module calls Vidya.flashcards.mountGame(root, config). */
-window.Vidya = window.Vidya || {};
+/* LittleGurukul — reusable flash-card engine.
+   A game module calls Gurukul.flashcards.mountGame(root, config). */
+window.Gurukul = window.Gurukul || {};
 
-Vidya.flashcards = {
+Gurukul.flashcards = {
   /**
    * config = {
    *   title, subtitle,
@@ -12,7 +12,7 @@ Vidya.flashcards = {
    * }
    */
   mountGame(root, config) {
-    let deck = Vidya.util.shuffle(config.deck);
+    let deck = Gurukul.util.shuffle(config.deck);
     let idx = 0;
 
     root.innerHTML = `
@@ -71,7 +71,7 @@ Vidya.flashcards = {
     $("#flip").onclick = () => card.classList.toggle("flipped");
     $("#next").onclick = () => { idx = (idx + 1) % deck.length; render(); };
     $("#prev").onclick = () => { idx = (idx - 1 + deck.length) % deck.length; render(); };
-    $("#shuffle").onclick = () => { deck = Vidya.util.shuffle(config.deck); idx = 0; render(); };
+    $("#shuffle").onclick = () => { deck = Gurukul.util.shuffle(config.deck); idx = 0; render(); };
 
     render();
   },

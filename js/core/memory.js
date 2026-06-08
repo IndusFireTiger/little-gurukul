@@ -1,8 +1,8 @@
-/* Vidya Play — reusable memory/match engine.
-   A game module calls Vidya.memory.mountGame(root, config). */
-window.Vidya = window.Vidya || {};
+/* LittleGurukul — reusable memory/match engine.
+   A game module calls Gurukul.memory.mountGame(root, config). */
+window.Gurukul = window.Gurukul || {};
 
-Vidya.memory = {
+Gurukul.memory = {
   /**
    * config = {
    *   gameKey: string,            // for best-score storage
@@ -44,7 +44,7 @@ Vidya.memory = {
 
     function deal() {
       const tiles = config.makeTiles(pairs);
-      Vidya.memory.createBoard({
+      Gurukul.memory.createBoard({
         boardEl, tiles, pairs, gameKey: config.gameKey,
         movesEl, pairsEl, bestEl, winEl, winMsgEl,
       });
@@ -70,9 +70,9 @@ Vidya.memory = {
     let moves = 0, matched = 0, first = null, lock = false;
     movesEl.textContent = "0";
     pairsEl.textContent = `0/${pairs}`;
-    bestEl.textContent = Vidya.util.loadBest(gameKey, pairs) || "—";
+    bestEl.textContent = Gurukul.util.loadBest(gameKey, pairs) || "—";
 
-    Vidya.util.shuffle(tiles).forEach(t => {
+    Gurukul.util.shuffle(tiles).forEach(t => {
       const el = document.createElement("div");
       el.className = "tile";
       el.innerHTML = `
@@ -103,8 +103,8 @@ Vidya.memory = {
     });
 
     function finish() {
-      const isBest = Vidya.util.saveBest(gameKey, pairs, moves);
-      bestEl.textContent = Vidya.util.loadBest(gameKey, pairs);
+      const isBest = Gurukul.util.saveBest(gameKey, pairs, moves);
+      bestEl.textContent = Gurukul.util.loadBest(gameKey, pairs);
       winMsgEl.textContent = `Solved in ${moves} moves.` + (isBest ? " New best! ⭐" : "");
       winEl.classList.add("show");
     }

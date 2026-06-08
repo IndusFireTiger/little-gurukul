@@ -1,10 +1,10 @@
-/* Vidya Play — reusable drag & drop engine.
+/* LittleGurukul — reusable drag & drop engine.
    A FIXED target (e.g. a deity) sits in a drop zone; the player drags correct items
    onto it. Correct items are accepted; wrong items bounce back with feedback.
    Uses Pointer Events so it works with both mouse and touch. */
-window.Vidya = window.Vidya || {};
+window.Gurukul = window.Gurukul || {};
 
-Vidya.dragdrop = {
+Gurukul.dragdrop = {
   /**
    * config = {
    *   gameKey, title, subtitle, winTitle,
@@ -120,8 +120,8 @@ Vidya.dragdrop = {
     }
 
     function finish() {
-      const isBest = Vidya.util.saveBest(config.gameKey, round.deity, mistakes);
-      bestEl.textContent = Vidya.util.loadBest(config.gameKey, round.deity);
+      const isBest = Gurukul.util.saveBest(config.gameKey, round.deity, mistakes);
+      bestEl.textContent = Gurukul.util.loadBest(config.gameKey, round.deity);
       winMsgEl.textContent = `Pooja to ${round.deity} complete with ${mistakes} oops.`
         + (mistakes === 0 ? " Flawless! ⭐" : (isBest ? " New best! ⭐" : ""));
       feedback("");
@@ -136,9 +136,9 @@ Vidya.dragdrop = {
       altarLabel.textContent = `${verb} ${round.deity}`;
       offered.innerHTML = ""; tray.innerHTML = ""; feedback("");
       winEl.classList.remove("show");
-      Vidya.util.shuffle(round.items).forEach(it => tray.appendChild(makeItem(it)));
+      Gurukul.util.shuffle(round.items).forEach(it => tray.appendChild(makeItem(it)));
       updateStats();
-      bestEl.textContent = Vidya.util.loadBest(config.gameKey, round.deity) || "—";
+      bestEl.textContent = Gurukul.util.loadBest(config.gameKey, round.deity) || "—";
     }
 
     root.querySelector("#restart").onclick = render;            // same fixed deity, reshuffled tray

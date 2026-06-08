@@ -1,10 +1,10 @@
-/* Vidya Play — reusable "connect the pairs" engine.
+/* LittleGurukul — reusable "connect the pairs" engine.
    Two columns are always face-up; the player links a left card to a right card.
    A correct link draws a permanent green line; a wrong link flashes red and clears. */
-window.Vidya = window.Vidya || {};
+window.Gurukul = window.Gurukul || {};
 const SVGNS = "http://www.w3.org/2000/svg";
 
-Vidya.connect = {
+Gurukul.connect = {
   /**
    * config = {
    *   gameKey, title, subtitle, winTitle,
@@ -132,8 +132,8 @@ Vidya.connect = {
     }
 
     function finish() {
-      const isBest = Vidya.util.saveBest(config.gameKey, count, tries);
-      bestEl.textContent = Vidya.util.loadBest(config.gameKey, count);
+      const isBest = Gurukul.util.saveBest(config.gameKey, count, tries);
+      bestEl.textContent = Gurukul.util.loadBest(config.gameKey, count);
       const perfect = tries === count;
       winMsgEl.textContent = `Linked all ${count} pairs in ${tries} tries.`
         + (perfect ? " Perfect! ⭐" : "") + (isBest && !perfect ? " New best! ⭐" : "");
@@ -146,9 +146,9 @@ Vidya.connect = {
       matchedLines = []; sel = { left: null, right: null }; lock = false;
       tries = 0; matched = 0;
       triesEl.textContent = "0"; pairsEl.textContent = `0/${count}`;
-      bestEl.textContent = Vidya.util.loadBest(config.gameKey, count) || "—";
-      Vidya.util.shuffle(pairs.map(p => ({ ...p.left, key: p.key }))).forEach(it => colL.appendChild(makeCard("left", it)));
-      Vidya.util.shuffle(pairs.map(p => ({ ...p.right, key: p.key }))).forEach(it => colR.appendChild(makeCard("right", it)));
+      bestEl.textContent = Gurukul.util.loadBest(config.gameKey, count) || "—";
+      Gurukul.util.shuffle(pairs.map(p => ({ ...p.left, key: p.key }))).forEach(it => colL.appendChild(makeCard("left", it)));
+      Gurukul.util.shuffle(pairs.map(p => ({ ...p.right, key: p.key }))).forEach(it => colR.appendChild(makeCard("right", it)));
       layout();
     }
 

@@ -1,8 +1,8 @@
-/* Vidya Play — content data.
+/* LittleGurukul — content data.
    Add to these arrays to expand decks; games pick up new entries automatically. */
-window.Vidya = window.Vidya || {};
+window.Gurukul = window.Gurukul || {};
 
-Vidya.data = {
+Gurukul.data = {
   /* Deity -> Vahana (used by Flash Cards + Match the Vahana) */
   deityVahana: [
     { deity:"Vishnu",    deityEmoji:"\u{1F535}", vahana:"Garuda",   animal:"Divine eagle",     emoji:"\u{1F985}", note:"The mighty eagle-king, swift carrier of the preserver of the universe." },

@@ -3,21 +3,28 @@
   const backBtn = document.getElementById("backBtn");
 
   function renderHome() {
-    const cards = Gurukul.registry.map(g => `
+    const card = g => `
       <button data-go="${g.id}">
         <div class="ico">${g.icon}</div>
         <h3>${g.title}</h3>
         <p>${g.blurb}</p>
-      </button>`).join("");
+      </button>`;
+    const section = (title, items) => items.length ? `
+      <h3 class="section-title">${title}</h3>
+      <div class="menu">${items.map(card).join("")}</div>` : "";
+
+    const games = Gurukul.registry.filter(g => (g.kind || "game") === "game");
+    const activities = Gurukul.registry.filter(g => g.kind === "activity");
 
     Gurukul.util.setScreen(`
       <div class="hero">
         <div class="om-big">&#x950;</div>
         <h2>Learn Hindu Mythology, Playfully</h2>
-        <p>Flip, match, and remember the deities, their mounts, weapons, and sacred symbols.</p>
+        <p>Play games and create — deities, their mounts, weapons, symbols, and more.</p>
         <div class="divider"></div>
       </div>
-      <div class="menu">${cards}</div>`);
+      ${section("\u{1F3AE} Games", games)}
+      ${section("\u{1F3A8} Activities", activities)}`);
 
     document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
   }

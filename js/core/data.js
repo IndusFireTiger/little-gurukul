@@ -167,6 +167,62 @@ Gurukul.data = {
     ]},
   ],
 
+  /* Coloring activity — line-art objects; each .region is independently fillable */
+  colorables: [
+    { id:"flute", name:"Flute", icon:"\u{1FA88}", svg:`<svg viewBox="0 0 200 200">
+      <rect class="region" x="20" y="88" width="160" height="26" rx="13"/>
+      <rect class="region" x="20" y="88" width="22" height="26" rx="11"/>
+      <rect class="region" x="158" y="88" width="22" height="26" rx="11"/>
+      <circle class="region" cx="64" cy="101" r="5"/>
+      <circle class="region" cx="88" cy="101" r="5"/>
+      <circle class="region" cx="112" cy="101" r="5"/>
+      <circle class="region" cx="136" cy="101" r="5"/>
+    </svg>` },
+    { id:"trishula", name:"Trishula", icon:"\u{1F531}", svg:`<svg viewBox="0 0 200 200">
+      <polygon class="region" points="70,18 80,60 60,60"/>
+      <polygon class="region" points="130,18 140,60 120,60"/>
+      <polygon class="region" points="100,6 110,60 90,60"/>
+      <rect class="region" x="62" y="58" width="76" height="11" rx="5"/>
+      <rect class="region" x="93" y="67" width="14" height="120" rx="7"/>
+    </svg>` },
+    { id:"diya", name:"Diya", icon:"\u{1FA94}", svg:`<svg viewBox="0 0 200 200">
+      <ellipse class="region" cx="100" cy="146" rx="52" ry="8"/>
+      <path class="region" d="M46 98 C50 132 76 142 100 142 C124 142 150 132 154 98 Q100 114 46 98 Z"/>
+      <ellipse class="region" cx="100" cy="92" rx="21" ry="7"/>
+      <path class="region" d="M100 34 C113 55 109 77 100 86 C91 77 87 55 100 34 Z"/>
+    </svg>` },
+    { id:"lotus", name:"Lotus", icon:"\u{1FAB7}", svg:`<svg viewBox="0 0 200 200">
+      <path class="region" d="M38 106 C62 110 86 118 100 126 C86 110 60 100 38 106 Z"/>
+      <path class="region" d="M162 106 C138 110 114 118 100 126 C114 110 140 100 162 106 Z"/>
+      <path class="region" d="M58 74 C72 100 86 116 100 126 C92 104 76 84 58 74 Z"/>
+      <path class="region" d="M142 74 C128 100 114 116 100 126 C108 104 124 84 142 74 Z"/>
+      <path class="region" d="M100 52 C80 84 80 114 100 126 C120 114 120 84 100 52 Z"/>
+      <ellipse class="region" cx="100" cy="128" rx="23" ry="13"/>
+    </svg>` },
+    { id:"om", name:"Om", icon:"\u{1F549}\u{FE0F}", svg:`<svg viewBox="0 0 200 200">
+      <circle class="region" cx="100" cy="100" r="80"/>
+      <text class="region" x="100" y="142" text-anchor="middle" font-size="128" font-family="Georgia, serif">&#x0950;</text>
+    </svg>` },
+    { id:"kalasha", name:"Kalasha", icon:"\u{1F3FA}", svg:`<svg viewBox="0 0 200 200">
+      <path class="region" d="M60 110 C56 152 78 178 100 178 C122 178 144 152 140 110 Z"/>
+      <rect class="region" x="68" y="100" width="64" height="14" rx="6"/>
+      <path class="region" d="M86 96 C68 90 60 74 70 66 C84 74 90 86 92 98 Z"/>
+      <path class="region" d="M114 96 C132 90 140 74 130 66 C116 74 110 86 108 98 Z"/>
+      <circle class="region" cx="100" cy="84" r="17"/>
+    </svg>` },
+    { id:"rangoli", name:"Rangoli", icon:"\u{1F386}", svg:`<svg viewBox="0 0 200 200">
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(0 100 100)"/>
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(45 100 100)"/>
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(90 100 100)"/>
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(135 100 100)"/>
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(180 100 100)"/>
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(225 100 100)"/>
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(270 100 100)"/>
+      <path class="region" d="M100 100 L114 52 Q100 40 86 52 Z" transform="rotate(315 100 100)"/>
+      <circle class="region" cx="100" cy="100" r="16"/>
+    </svg>` },
+  ],
+
   /* Inline SVG for items without a good emoji */
   svg: {
     swastika: `<svg class="tile-svg" viewBox="0 0 100 100" fill="none" stroke="#d4a23a" stroke-width="8" stroke-linecap="round">

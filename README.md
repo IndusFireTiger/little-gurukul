@@ -35,6 +35,12 @@ A simple, self-contained web app for learning Hindu mythology through play.
     teaching note (e.g. "Tulsi is not offered to Ganesha"). Complete the pooja, then
     advance to the next deity. Uses Pointer Events, so it works with mouse and touch.
 
+## Activities (creative, no scoring)
+
+- **Color the Symbols** — a digital coloring book: pick a colour, then tap any part of an
+  object to fill it. Objects: flute, trishula, diya, lotus, Om, kalasha, rangoli. "Start
+  over" clears the page. The home menu groups **🎮 Games** and **🎨 Activities** separately.
+
 ## Features
 - Easy / Medium / Hard difficulty (4 / 6 / 8 pairs) on the memory games.
 - Move counter and **best score per difficulty**, saved in the browser (localStorage).

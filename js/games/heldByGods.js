@@ -15,7 +15,7 @@ Gurukul.util.register({
         return chosen.map(d => ({
           key: d.deity,
           left:  { emoji: "\u{1F549}\u{FE0F}", label: d.deity, tag: "Deity" },
-          right: { emoji: d.emoji, label: d.object, tag: "Holds" },
+          right: { emoji: d.svg ? Gurukul.data.svg[d.svg] : d.emoji, label: d.object, tag: "Holds" },
         }));
       },
     });

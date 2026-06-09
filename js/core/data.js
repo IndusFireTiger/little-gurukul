@@ -12,13 +12,13 @@ Gurukul.data = {
     { deity:"Durga",     deityEmoji:"\u{1F5E1}️", vahana:"Simha", animal:"Lion / Tiger", emoji:"\u{1F981}", note:"The lion embodies the fearless power of the warrior goddess." },
     { deity:"Ganesha",   deityEmoji:"\u{1F418}", vahana:"Mushika",  animal:"Mouse",            emoji:"\u{1F42D}", note:"The humble mouse — even the smallest can carry great wisdom." },
     { deity:"Kartikeya", deityEmoji:"\u{1F3F9}", vahana:"Mayura",   animal:"Peacock",          emoji:"\u{1F99A}", note:"The radiant peacock, mount of the god of war and victory." },
-    { deity:"Indra",     deityEmoji:"\u{26A1}",  vahana:"Airavata", animal:"Elephant",         emoji:"\u{1F418}", note:"The white celestial elephant of the king of the heavens." },
-    { deity:"Yama",      deityEmoji:"\u{2696}️", vahana:"Mahisha", animal:"Buffalo",      emoji:"\u{1F403}", note:"The buffalo carries the lord of dharma and death." },
-    { deity:"Agni",      deityEmoji:"\u{1F525}", vahana:"Mesha",    animal:"Ram",              emoji:"\u{1F40F}", note:"The ram bears the fire god across the worlds." },
-    { deity:"Varuna",    deityEmoji:"\u{1F30A}", vahana:"Makara",   animal:"Makara (sea-beast)", emoji:"\u{1F40A}", note:"The makara, a mythical aquatic creature, mount of the water god." },
+    { deity:"Indra",     deityEmoji:"\u{1F607}\u{26A1}",  vahana:"Airavata", animal:"Elephant",         emoji:"\u{1F418}", note:"The white celestial elephant of the king of the heavens." },
+    { deity:"Yama",      deityEmoji:"\u{1F607}\u{2696}\u{FE0F}", vahana:"Mahisha", animal:"Buffalo",      emoji:"\u{1F403}", note:"The buffalo carries the lord of dharma and death." },
+    { deity:"Agni",      deityEmoji:"\u{1F607}\u{1F525}", vahana:"Mesha",    animal:"Ram",              emoji:"\u{1F40F}", note:"The ram bears the fire god across the worlds." },
+    { deity:"Varuna",    deityEmoji:"\u{1F607}\u{1F30A}", vahana:"Makara",   animal:"Makara (sea-beast)", emoji:"\u{1F40A}", note:"The makara, a mythical aquatic creature, mount of the water god." },
     { deity:"Yamuna",    deityEmoji:"\u{1F3DE}️", vahana:"Kurma", animal:"Tortoise",      emoji:"\u{1F422}", note:"The steady tortoise, mount of the river goddess Yamuna." },
-    { deity:"Vayu",      deityEmoji:"\u{1F4A8}", vahana:"Mriga",    animal:"Deer / Antelope",  emoji:"\u{1F98C}", note:"The swift deer, fitting mount for the god of wind." },
-    { deity:"Shani",     deityEmoji:"\u{1FA90}", vahana:"Kaaka",    animal:"Crow / Vulture",   emoji:"\u{1F426}‍⬛", note:"The dark bird, mount of Saturn, lord of karma and time." },
+    { deity:"Vayu",      deityEmoji:"\u{1F607}\u{1F4A8}", vahana:"Mriga",    animal:"Deer / Antelope",  emoji:"\u{1F98C}", note:"The swift deer, fitting mount for the god of wind." },
+    { deity:"Shani",     deityEmoji:"\u{1F607}\u{1FA90}", vahana:"Kaaka",    animal:"Crow / Vulture",   emoji:"\u{1F426}‍⬛", note:"The dark bird, mount of Saturn, lord of karma and time." },
   ],
 
   /* Weapon (ayudha) -> Owner (used by Whose Weapon?) */
@@ -123,7 +123,7 @@ Gurukul.data = {
   deityObjects: [
     { deity:"Krishna",   object:"Flute (Bansuri)",      emoji:"\u{1FA88}" },
     { deity:"Saraswati", object:"Veena",                emoji:"\u{1F3BB}" },
-    { deity:"Shiva",     object:"Damaru (drum)",        emoji:"\u{1F941}" },
+    { deity:"Shiva",     object:"Damaru (drum)",        svg:"damaru" },
     { deity:"Vishnu",    object:"Shankha (conch)",      emoji:"\u{1F41A}" },
     { deity:"Brahma",    object:"Vedas (scripture)",    emoji:"\u{1F4D6}" },
     { deity:"Lakshmi",   object:"Gold coins",           emoji:"\u{1FA99}" },
@@ -225,13 +225,18 @@ Gurukul.data = {
 
   /* Inline SVG for items without a good emoji */
   svg: {
-    swastika: `<svg class="tile-svg" viewBox="0 0 100 100" fill="none" stroke="#d4a23a" stroke-width="8" stroke-linecap="round">
-      <line x1="50" y1="16" x2="50" y2="84"/><line x1="16" y1="50" x2="84" y2="50"/>
-      <line x1="50" y1="16" x2="74" y2="16"/><line x1="84" y1="50" x2="84" y2="26"/>
-      <line x1="50" y1="84" x2="26" y2="84"/><line x1="16" y1="50" x2="16" y2="74"/></svg>`,
+    swastika: `<svg class="tile-svg" viewBox="0 0 100 100" fill="none" stroke="#d4a23a" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter">
+      <line x1="50" y1="14" x2="50" y2="86"/><line x1="14" y1="50" x2="86" y2="50"/>
+      <line x1="50" y1="14" x2="78" y2="14"/><line x1="86" y1="50" x2="86" y2="78"/>
+      <line x1="50" y1="86" x2="22" y2="86"/><line x1="14" y1="50" x2="14" y2="22"/></svg>`,
     gada: `<svg class="tile-svg" viewBox="0 0 100 100" fill="#d4a23a" stroke="#d4a23a">
       <circle cx="50" cy="12" r="6"/><circle cx="50" cy="34" r="17" fill="none" stroke-width="6"/>
       <circle cx="50" cy="34" r="7"/><rect x="46" y="46" width="8" height="44" rx="4"/>
       <rect x="40" y="86" width="20" height="7" rx="3"/></svg>`,
+    damaru: `<svg class="tile-svg" viewBox="0 0 100 100" fill="#d4a23a" stroke="#d4a23a" stroke-width="2" stroke-linejoin="round">
+      <path d="M28 26 H72 L54 50 L72 74 H28 L46 50 Z"/>
+      <ellipse cx="50" cy="26" rx="22" ry="5"/><ellipse cx="50" cy="74" rx="22" ry="5"/>
+      <line x1="50" y1="50" x2="86" y2="50" stroke-width="2.5"/><circle cx="88" cy="50" r="4.5"/>
+      <line x1="50" y1="50" x2="14" y2="50" stroke-width="2.5"/><circle cx="12" cy="50" r="4.5"/></svg>`,
   },
 };
